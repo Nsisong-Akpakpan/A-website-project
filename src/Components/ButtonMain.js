@@ -2,11 +2,13 @@ import React from 'react';
 import Button from '@mui/material/Button';
 
 
-function ButtonMain({text, border, variant, size, color, height, width, fontSize, mt, startIcon, endIcon, type}) {
+function ButtonMain({display, justifyContent, text, border, variant, size, color, height, width, fontSize, mt, startIcon, endIcon, type}) {
     return ( 
         <Button variant={variant} size={size} startIcon={startIcon} endIcon={endIcon} type={type}
          sx={{
              p:2,
+             display:{display},
+             justifyContent:{justifyContent},
              textTransform:"none",
              marginTop:{mt},
              fontSize:{fontSize},

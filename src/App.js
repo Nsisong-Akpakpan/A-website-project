@@ -1,7 +1,7 @@
 import Login from './Pages/login';
-import SignUp from './Pages/signUp';
+// import SignUp from './Pages/signUp';
 import Home from './Pages/home';
-import Navbar from './Templates/Navbar';
+// import Navbar from './Templates/Navbar';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import {
   BrowserRouter as Router,

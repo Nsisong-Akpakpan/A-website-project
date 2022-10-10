@@ -1,7 +1,7 @@
 // import {Typography} from '@mui/material';
 import { useState } from 'react';
 import Navbar from '../Templates/Navbar';
-import {Grid, Typography, Box, Container} from '@mui/material';
+import {Grid, Typography, Box, TextField, Container} from '@mui/material';
 import {Card, CardContent, CardActions, Button, Divider} from '@mui/material';
 import ButtonMain from '../Components/ButtonMain';
 import Twokids from "../../src/pictureImport/Twokids.png";
@@ -13,11 +13,15 @@ import { myData } from '../data';
 // Icons
 import {GoPrimitiveDot} from "react-icons/go";
 import {GrGroup} from "react-icons/gr";
+import {BsArrowRight} from "react-icons/bs";
+
 function Home() {
     const[data] = useState(myData);
     return(
         <div>
             <Navbar/>
+            
+            {/* Second grid */}
             <Container maxWidth="lg" sx={{width:{xs:"100%", sm:"90%", md:"90%"}, mt: 8 }}>
             <Grid container spacing={2} columns={12}>
                 <Grid item xs={12} sm={12} md={6.6}>
@@ -42,16 +46,26 @@ function Home() {
                     {/* <Twokids/>              */}
                 </Grid>
             </Grid>
+            </Container>
+
+            {/* Third grid */}
             <DividerBar/>
-            <Grid container spacing={2} columns={12}>
-            <Grid item xs={12} sm={12} md={5.4}>
-                <img src={Twokids} alt="" sx={{width:"50px"}}/>
+
+            {/* Fourth grid */}
+            <Container maxWidth="lg" sx={{width:{xs:"100%", sm:"90%", md:"90%"}, mt: 8 }}>
+            <Grid container spacing={2} columns={12} sx={{display:"flex", flexDirection:"center", justifyContent:"center"}}>
+                <Grid item xs={12} sm={12} md={6}>
+                    <Box sx={{border:"1px solid red"}}>
+                        <img src={Twokids} alt="" style={{width:"90%", border:"1px solid red"}} />
+                    </Box>
                 </Grid>
-                <Grid item xs={12} sm={12} md={6.6} sx={{display:"flex", alignItems:"center"}} >
-                    <Box>
-                        <Typography variant="h4">RipplED supports your learning and social impact Activities</Typography>             
-                        <Typography variant="p">Through its online platform, RipplED offer students in Secondary Schools the opportunity to access skill development opportunities, mentorship and tailored curriculum to enable them learn and accelerate their activities and become global change makers.</Typography>
+                <Grid item xs={12} sm={12} md={6} sx={{display:"flex"}} >
+                    <Box sx={{pt:4}} >
                         <Box>
+                            <Typography variant="h4" sx={{width:"583px", fontSize:"32px", fontWeight:"600", color:"#303E49"}}>RipplED supports your learning and social impact Activities</Typography>             
+                            <Typography variant="p" sx={{mt:2, width:"583px", fontSize:"24px", fontWeight:"300", color:"#3A3A3A"}}>Through its online platform, RipplED offer students in Secondary Schools the opportunity to access skill development opportunities, mentorship and tailored curriculum to enable them learn and accelerate their activities and become global change makers.</Typography>
+                        </Box>
+                        <Box sx={{pt:5}}>
                             <ButtonMain
                             type="submit" 
                             variant={"contained"} 
@@ -69,6 +83,7 @@ function Home() {
             </Grid>
             </Container>
 
+            {/* Fifth grid */}
             <Container maxWidth="lg" sx={{width:{xs:"100%", sm:"90%", md:"90%"}, mt: 8 }}>
                 <Grid container spacing={0} columns={12}>
                     <Grid item xs={12} sm={12} md={3}>
@@ -127,8 +142,8 @@ function Home() {
                             <Box sx={{border:"1px solid red"}}>
                                 <Card>
                                     <Box>
-                                        {/* <img src={ladywithcomputer} alt=""/> */}
-                                        {datum.image}
+                                        <img src={datum.image} alt=""/>
+                                        {/* {datum.image} */}
                                     </Box>
                                     <CardActions sx={{display:"flex", justifyContent:"space-between"}}>
                                         <Button startIcon={<GoPrimitiveDot color="#F06277"/>} size="small" variant="contained" sx={{textTransform:"none", color:"#6E7A87", bgcolor:"rgba(42, 86, 159, 0.95)"}}>{datum.category}</Button>
@@ -189,20 +204,22 @@ function Home() {
                 </Grid>
 
             </Container>
-
-            <Box sx={{justifyContent:"center", height:"303px", color:"white", backgroundColor:"rgba(42, 86, 159, 0.95);", display:"grid", gridGap:"140px", gridTemplateColumns: "0.7fr 0.4fr", alignItems:"center"}}>
+            
+            {/* Sixth grid */}
+            <Box mt={10} sx={{ justifyContent:"center", height:"303px", color:"white", backgroundColor:"rgba(42, 86, 159, 0.95);", display:"grid", gridGap:"140px", gridTemplateColumns: "0.7fr 0.4fr", alignItems:"center"}}>
                 <Box sx={{ border:"1px solid red"}}>
                     <Typography variant="h3" sx={{fontWeight:"bold", textAlign:"left"}} >You Can Become A RipplED Sponsor Or Partner</Typography>
                 </Box>
                
-                <Box sx={{border:"1px solid red",justifyContent:"center" }}>
-                <Typography variant="p" sx={{textAlign:"left", lineHeight:"33.6px", fontSize:"24px"}} >Our students are reaching communities <br/> with their solutions and we need your<br/>
-                    help to enable them scale their impact.</Typography>
+                <Box sx={{border:"1px solid red", justifyContent:"center", textAlign:"justify",}}>
+                <Typography variant="p" sx={{display: "inline-block", width:"100%", border:"1px solid red", textAlign:"justify", lineHeight:"33.6px", fontSize:"24px"}} >Our students are reaching communities with their solutions and we need your help to enable them scale their impact.</Typography>
                     
                     <Box sx={{display:"grid", gridGap:"29px", gridTemplateColumns: "200px 50px 200px" }}>
                         <Box>
                         <ButtonMain
-                        type="submit" 
+                        type="submit"
+                        diplay={"flex"}
+                        justifyContent={"space-around"} 
                         variant={"contained"} 
                         width={"186px"} 
                         height={"66px"} 
@@ -210,17 +227,20 @@ function Home() {
                         // bg={"linear-gradient(274.01deg, #F06277 8.9%, #FFB1BD 126.7%)"} 
                         color={"#FFFFFF"}  
                         text={"Sponsor"} 
-                        fontSize={"13px"}
+                        fontSize={"15px"}
+                        endIcon={<BsArrowRight color="#ffffff" size="40px"/>}
                         />
                         </Box>
 
-                        <Box>
-                            <Typography>or</Typography>
+                        <Box mt={2} sx={{fontSize:"24px"}}>
+                           or
                         </Box>
                     
                         <Box>
                         <ButtonMain
-                        type="submit" 
+                        type="submit"
+                        diplay={"flex"}
+                        justifyContent={"space-around"} 
                         variant={"contained"} 
                         width={"186px"} 
                         height={"66px"} 
@@ -228,7 +248,8 @@ function Home() {
                         // bg={"linear-gradient(274.01deg, #F06277 8.9%, #FFB1BD 126.7%)"} 
                         color={"#FFFFFF"}  
                         text={"Partner"} 
-                        fontSize={"13px"}
+                        fontSize={"15px"}
+                        endIcon={<BsArrowRight color="#ffffff" size="40px"/>}
                         />
                         </Box>
                     </Box>
@@ -238,7 +259,111 @@ function Home() {
                 </Box>
               
             </Box>
-            
+
+            {/* Seventh grid */}
+            <Container maxWidth="lg" sx={{width:{xs:"100%", sm:"90%", md:"80%"}, mt: 8 }}>
+            <Grid container spacing={1} columns={12}>
+                <Grid item xs={12} sm={12} md={6}>
+                    <Box >
+                        <img src={Twokids} alt="" style={{width:"90%", border:"1px solid red"}} />
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={12} md={6} sx={{width:"100%", border:"1px solid red", display:"flex"}} >
+                    <Box>
+                        <Typography variant="h4" sx={{width:"358px", fontSize:"32px", fontWeight:"600", color:"#303E49"}} >Watch Our Students In Action</Typography>             
+                        <Box sx={{pt:5}}>
+                            <Typography variant="p" >From acting for Quality Education, to advocating for Gender Equality to  Championing climate causes, our students are working towards the actualization of the SDGs by 2030</Typography>
+                        </Box>
+                        <Box>
+                        <Button size="small" endIcon={<BsArrowRight />} variant="text" sx={{textTransform:"none", color:"#2A569F"}}>Learn More</Button> 
+                        </Box>
+                    </Box>
+                </Grid>
+            </Grid>
+            </Container>
+
+             {/*Eight grid */}
+             <Container maxWidth="lg" sx={{width:{xs:"100%", sm:"90%", md:"80%"}, mt: 8}}>
+                 <Box sx={{border:"1px solid red", display:"flex", flexDirection:"center", justifyContent:"center", textAlign:"center"}} >
+                    <Typography variant="6" sx={{textAlign:"center", fontWeight:"600", fontSize:"32px"}}>What Our Students Say</Typography>
+                 </Box>
+            <Grid container spacing={1} columns={12} mt={2.6} sx={{display:"flex", justifyContent:"center"}}>
+                <Grid item xs={12} sm={12} md={4}>
+                    <Box >
+                        <img src={Twokids} alt="" style={{width:"90%", border:"1px solid red"}} />
+                    </Box>
+                    <Box sx={{border:"1px solid red", width:"90%", display:"flex", flexDirection:"row", justifyContent:"center"}}>
+                        <Typography variant="p" sx={{fontWeight:"400", width:"170px", fontSize:"14px", color:"#303E49"}}>An enim nullam tempori donec porta and blandi integer velna vitae.</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={12} md={4}>
+                    <Box >
+                        <img src={Twokids} alt="" style={{width:"90%", border:"1px solid red"}} />
+                    </Box>
+                    <Box sx={{border:"1px solid red", width:"90%", display:"flex", flexDirection:"row", justifyContent:"center"}}>
+                        <Typography variant="p" sx={{fontWeight:"400", width:"170px", fontSize:"14px", color:"#303E49"}}>An enim nullam tempori donec porta and blandi integer velna vitae.</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={12} md={4}>
+                    <Box >
+                        <img src={Twokids} alt="" style={{width:"90%", border:"1px solid red"}} />
+                    </Box>
+                    <Box sx={{border:"1px solid red", width:"90%", display:"flex", flexDirection:"row", justifyContent:"center"}}>
+                        <Typography variant="p" sx={{fontWeight:"400", width:"170px", fontSize:"14px", color:"#303E49"}}>An enim nullam tempori donec porta and blandi integer velna vitae.</Typography>
+                    </Box>
+                </Grid>
+            </Grid>
+            </Container>
+
+             {/* Ninth grid */}
+             <Container maxWidth="lg" sx={{width:{xs:"100%", sm:"90%", md:"90%"}, mt: 8 }}>
+            <Grid container spacing={2} columns={12} sx={{display:"flex", flexDirection:"center", justifyContent:"center"}}>
+                <Grid item xs={12} sm={12} md={6}>
+                    <Box sx={{border:"1px solid red"}}>
+                        <img src={Twokids} alt="" style={{width:"90%", border:"1px solid red"}} />
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={12} md={6} sx={{display:"flex"}} >
+                    <form>
+                        <Box sx={{display:"flex", flexWrap:"wrap", justifyContent:"space-between"}}>
+                            <Box sx={{border: "1px solid red", height: "90px", width:"260px", display: "flex"}}>
+                                <Box sx={{display:"block"}}>
+                                    <Typography sx={{fontWeight:"500", fontSize:"16px", lineHeight:"24px"}} >NAME</Typography>
+                                     <TextField variant="outlined" margin="dense" size="small" label="Your name" />
+                                </Box>
+                            </Box>
+                            <Box sx={{border: "1px solid red", height: "90px", width:"260px", display: "flex"}}>
+                                <Box sx={{display:"block"}}>
+                                    <Typography sx={{fontWeight:"500", fontSize:"16px", lineHeight:"24px"}} >SUBJECT</Typography>
+                                     <TextField variant="outlined" margin="dense" size="small" label="Choose subject" />
+                                </Box>
+                            </Box>
+                            <Box sx={{border: "1px solid red", height: "90px", width:"260px", display: "flex"}}>
+                                <Box sx={{display:"block"}}>
+                                    <Typography sx={{fontWeight:"500", fontSize:"16px", lineHeight:"24px"}} >COMPANY</Typography>
+                                     <TextField variant="outlined" margin="dense" size="small" label="Text here" />
+                                </Box>
+                            </Box>
+                            <Box sx={{border: "1px solid red", height: "90px", width:"260px", display: "flex"}}>
+                                <Box sx={{display:"block"}}>
+                                    <Typography sx={{fontWeight:"500", fontSize:"16px", lineHeight:"24px"}} >EMAIL</Typography>
+                                     <TextField variant="outlined" margin="dense" size="small" label="Your email address" />
+                                </Box>
+                            </Box>
+                            <Box sx={{border: "1px solid red", height: "90px", width:"100%", display: "flex"}}>
+                                <Box sx={{display:"block"}}>
+                                    <Typography sx={{fontWeight:"500", fontSize:"16px", lineHeight:"24px"}} >MESSAGE</Typography>
+                                     <TextField id="fullWidth"  variant="outlined" margin="dense" fullWidth multiline label="Start typing here" />
+                                </Box>
+                            </Box>
+                            
+                        </Box>
+
+                    </form>
+                    
+                </Grid>
+            </Grid>
+            </Container>
             
           
          
