@@ -30,19 +30,19 @@ function Home() {
             <Navbar/>
             
             {/* Second grid */}
-            <Container maxWidth="lg" sx={{width:{xs:"100%", sm:"90%", md:"90%"}, mt: 8 }}>
-            <Grid container spacing={2} columns={12}>
+            <Container maxWidth="lg" sx={{width:{xs:"100%", sm:"90%", md:"90%"}, mt:{md:8}  }}>
+            <Grid container spacing={1} columns={12}>
                 <Grid item xs={12} sm={12} md={6.1} sx={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:{xs:"center", sm:"center", md:"start"} }}>
-                    <Box sx={{border:"1px solid red"}} >
-                        <Typography variant="h4" sx={{color:"#6C6C6C", height:{xs:"100%", sm:"100%", md:"150px"}, fontSize:{xs:"1.5rem", md:"2rem"}, fontWeight:{xs:"500", md:"700"}, lineHeight:"50px", }}>Receive the support you need to create a ripple effect in your school and community.</Typography>             
+                    <Box sx={{border:"1px solid red", justifyContent:"center", textAlign:"justify"}} >
+                        <Typography variant="h4" sx={{display: "inline-block", color:"#6C6C6C", height:{xs:"100%", sm:"100%", md:"150px"}, fontSize:{xs:"1.5rem", md:"2rem"}, fontWeight:{xs:"700", md:"700"}, lineHeight:"50px", }}>Receive the support you need to create a ripple effect in your school and community.</Typography>             
                     </Box>
 
-                    <Box>
-                        <Typography variant="p" sx={{color:"#767672", fontSize:"18px", fontWeight:"400", lineHeight:"25.2px"}}>We empower high school students ages 10 - 18 to become innovators and global change agents.</Typography>
+                    <Box sx={{justifyContent:"center", textAlign:"justify"}}>
+                        <Typography variant="p" sx={{display: "inline-block", color:"#767672", fontSize:"18px", fontWeight:"400", lineHeight:"25.2px"}}>We empower high school students ages 10 - 18 to become innovators and global change agents.</Typography>
                     </Box>
 
                     <Box sx={{display:{xs:"block", md:"grid"}, gridTemplateColumns:"1fr 1fr", mt:2}}>
-                        <Box>
+                        <Box sx={{pt:{md:1.5}}}>
                             <Typography variant="p" sx={{color:"#767672", fontSize:"20px", fontWeight:"700", lineHeight:"28px"}}>Want to join our community?</Typography>
                         </Box>
                         <Box>
@@ -60,8 +60,8 @@ function Home() {
                         </Box>
                     </Box>            
                 </Grid>
-                <Grid item xs={12} sm={12} md={5.9} >
-                    <Box sx={{border:"1px solid red", width:{xs:"100%", sm:"100%", md:"100%"}, display:"flex", justifyContent:{xs:"center", sm:"center", md:"end"} }}>
+                <Grid item xs={12} sm={12} md={5.9} sx={{border:"1px solid black"}} >
+                    <Box sx={{border:"1px solid green", width:{xs:"100%", sm:"100%", md:"48vw"}, display:"flex", justifyContent:{xs:"center", sm:"center", md:"end"} }}>
                         <img src={Twokids} alt="" style={{border:"1px solid red", width:"100%"}} />
 
                     </Box>
@@ -94,7 +94,7 @@ function Home() {
                             <Typography variant="h4" sx={{width:"583px", fontSize:"32px", fontWeight:"600", color:"#303E49"}}>RipplED supports your learning and social impact Activities</Typography>             
                             <Typography variant="p" sx={{mt:2, width:"583px", fontSize:"24px", fontWeight:"300", color:"#3A3A3A"}}>Through its online platform, RipplED offer students in Secondary Schools the opportunity to access skill development opportunities, mentorship and tailored curriculum to enable them learn and accelerate their activities and become global change makers.</Typography>
                         </Box> */}
-                        <Box sx={{pt:5}}>
+                        <Box sx={{pt:5, display:"flex", flexDirection:"row", justifyContent:{xs:"center", md:"start"}}}>
                             <ButtonMain
                             type="submit" 
                             variant={"contained"} 
@@ -184,8 +184,8 @@ function Home() {
                         <Grid container spacing={2} columns={9}>
                     {data.map((datum) =>(
                         // <Box sx={{display:"grid", gridGap:"18px", gridTemplateColumns: "42vh 42vh 42vh" }}>
-                        <Grid item xs={9} sm={9} md={3} sx={{border:"1px solid red"}} >
-                            <Box sx={{border:"1px solid red", mt:{xs:10, md:0}}}>
+                        <Grid item xs={9} sm={9} md={3} sx={{border:"1px solid red", mt:{xs:7, md:0}}} >
+                            <Box sx={{border:"1px solid red" }}>
                                 <Card>
                                     <Box width="100%" >
                                         <img src={datum.image} alt="" style={{border:"1px solid green", width:"100%"}}/>
@@ -194,8 +194,8 @@ function Home() {
                                         <Button startIcon={<GoPrimitiveDot color="#F06277"/>} size="small" variant="contained" sx={{textTransform:"none", color:"#6E7A87", bgcolor:"rgba(42, 86, 159, 0.95)"}}>{datum.category}</Button>
                                         <Button size="small" variant="text" sx={{textTransform:"none", color:"#2A569F"}}>{datum.date}</Button>
                                     </CardActions>
-                                    <CardContent>
-                                        <Typography variant="body2" color="black">
+                                    <CardContent sx={{justifyContent:"center", textAlign:"justify"}}>
+                                        <Typography sx={{display: "inline-block"}} variant="body2" color="black">
                                         {datum.text}
                                         </Typography>
                                         <Divider sx={{ borderColor: "#2A569F", borderBottomWidth: 2, fontWeight:"bold"}}/>
@@ -309,13 +309,13 @@ function Home() {
             <Container maxWidth="lg" sx={{width:{xs:"100%", sm:"90%", md:"80%"}, mt: 8 }}>
             <Grid container spacing={1} columns={12}>
                 <Grid item xs={12} sm={12} md={6}>
-                    <Box>
+                    <Box sx={{display:"flex", justifyContent:{xs:"center"}}}>
                         <img src={Twokids} alt="" style={{width:"90%", border:"1px solid red"}} />
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={12} md={6} sx={{width:"100%", border:"1px solid red", display:"flex"}} >
                     <Box>
-                        <Typography variant="h4" sx={{width:"358px", fontSize:"32px", fontWeight:"600", color:"#303E49"}} >Watch Our Students In Action</Typography>             
+                        <Typography variant="h4" sx={{fontSize:"32px", fontWeight:"600", color:"#303E49"}} >Watch Our Students In Action</Typography>             
                         <Box sx={{pt:5}}>
                             <Typography variant="p" >From acting for Quality Education, to advocating for Gender Equality to  Championing climate causes, our students are working towards the actualization of the SDGs by 2030</Typography>
                         </Box>
@@ -365,7 +365,7 @@ function Home() {
             <Grid container spacing={2} columns={12} sx={{display:"flex", flexDirection:"center", justifyContent:"center"}}>
                 <Grid item xs={12} sm={12} md={6}>
                     <Box sx={{border:"1px solid red", width:{xs:"100%", md:"416px"}, height:"100%", display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center" }}>
-                        <img src={ninthgridpicture} alt="" style={{width:{xs:"30px", md:"416px"}, height:"406px", borderRadius:"9px", border:"1px solid red"}} />
+                        <img src={ninthgridpicture} alt="" style={{width:"100%", height:"406px", borderRadius:"9px", border:"1px solid red"}} />
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={12} md={6}>
@@ -377,7 +377,7 @@ function Home() {
                                     <Typography sx={{fontWeight:"500", fontSize:"16px", lineHeight:"24px"}} >NAME</Typography>
                                      <TextField variant="outlined" margin="dense" size="small" label="Your name" 
                                     sx={{
-                                        width:{xs:370, md:540}
+                                        width:{xs:350, md:540}
                                     }}
                                     />
                                 </Box>
@@ -387,7 +387,7 @@ function Home() {
                                     <Typography sx={{fontWeight:"500", fontSize:"16px", lineHeight:"24px"}} >SUBJECT</Typography>
                                      <TextField variant="outlined" margin="dense" size="small" label="Choose subject" 
                                      sx={{
-                                        width:{xs:370, md:540}
+                                        width:{xs:350, md:540}
                                     }}
                                     />
                                 </Box>
@@ -397,7 +397,7 @@ function Home() {
                                     <Typography sx={{fontWeight:"500", fontSize:"16px", lineHeight:"24px"}} >COMPANY</Typography>
                                      <TextField variant="outlined" margin="dense" size="small" label="Text here"
                                      sx={{
-                                        width:{xs:370, md:540}
+                                        width:{xs:350, md:540}
                                     }}
                                     />
                                 </Box>
@@ -407,7 +407,7 @@ function Home() {
                                     <Typography sx={{fontWeight:"500", fontSize:"16px", lineHeight:"24px"}} >EMAIL</Typography>
                                      <TextField variant="outlined" margin="dense" size="small" label="Your email address"
                                      sx={{
-                                        width:{xs:370, md:540}
+                                        width:{xs:350, md:540}
                                     }}
                                     />
                                 </Box>
@@ -421,7 +421,7 @@ function Home() {
                                       multiline
                                       label="Start typing here"
                                       sx={{
-                                          width:{xs:370, md:540}
+                                          width:{xs:350, md:540}
                                       }}
                                       InputProps={{ sx: { height:200 } }}
                                      />
