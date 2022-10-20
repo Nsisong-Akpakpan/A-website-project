@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 // import { Button } from './Button';
+// import {Button} from '@mui/material';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import Dropdown from './Dropdown';
 import RippledLogo2x from "../../src/pictureImport/RippledLogo2x.png"
+
+// ICONS
+import {BsChevronDown} from "react-icons/bs";
+import {FaBars} from "react-icons/fa";
+import {FaTimes} from "react-icons/fa";
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -33,10 +39,11 @@ function Navbar() {
       <nav className='navbar'>
         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
           {/* EPIC */}
-          <img src={RippledLogo2x} alt="" sx={{width:"50px"}}/>
+          <img src={RippledLogo2x} alt="" style={{width:"156.13px", height:"40px"}}/>
         </Link>
         <div className='menu-icon' onClick={handleClick}>
-          <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+          {/* <i className={click ? 'fas fa-times' : 'fas fa-bars'} /> */}
+         {click ? <FaTimes className='fas fa-times'/> : <FaBars className='fas fa-bars'/>}
         </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className='nav-item'>
@@ -75,7 +82,7 @@ function Navbar() {
               className='nav-links'
               onClick={closeMobileMenu}
             >
-              Projects <i className='fas fa-caret-down' />
+              Projects <BsChevronDown sx={{pt:25}} className='fas fa-caret-down' />
             </Link>
             {dropdown && <Dropdown />}
           </li>
@@ -102,10 +109,10 @@ function Navbar() {
             </Link>
           </li> */}
         </ul>
-        {/* <Button /> */}
+        <button className='button'>Login</button>
       </nav>
     </>
   );
 }
-
+// sx={{textTransform:"none", borderRadius:"50px", width:"124px", height:"40px"}}
 export default Navbar;
