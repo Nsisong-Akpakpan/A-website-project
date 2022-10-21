@@ -78,7 +78,7 @@ function Home() {
             <Grid container spacing={2} columns={12} sx={{display:"flex", flexDirection:"center", justifyContent:"center"}}>
                 <Grid item xs={12} sm={12} md={6}>
                     <Box sx={{border:"1px solid red"}}>
-                        <img src={Twokids} alt="" style={{width:"90%", border:"1px solid red"}} />
+                        <img src={Twokids} alt="" style={{width:"100%", border:"1px solid red"}} />
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={12} md={6} sx={{display:"flex"}} >
@@ -253,15 +253,16 @@ function Home() {
             {/* Sixth grid */}
             <Box mt={10} sx={{ justifyContent:"center", height:{md:"303px"}, color:"white", backgroundColor:"rgba(42, 86, 159, 0.95);", display:{xs:"block", md:"grid"}, gridGap:"140px", gridTemplateColumns:{xs:"1fr 1fr", md:"0.7fr 0.4fr"}, alignItems:"center"}}>
                 <Box sx={{ border:"1px solid red", justifyContent:"center", textAlign:"justify"}}>
-                    <Typography sx={{display: "inline-block", fontSize:{xs:"40px", md:"50px"}, fontWeight:"600" }} >You Can Become A RipplED Sponsor Or Partner</Typography>
+                    <Typography sx={{display: "inline-block", fontSize:{xs:"30px", md:"50px"}, fontWeight:{xs:"500", md:"600"} }} >You Can Become A RipplED Sponsor Or Partner</Typography>
                 </Box>
                
                 <Box sx={{border:"1px solid red", justifyContent:"center", textAlign:"justify"}}>
-                    <Typography variant="p" sx={{display: "inline-block", width:"100%", border:"1px solid red", textAlign:"justify", lineHeight:"33.6px", fontSize:"24px"}} >Our students are reaching communities with their solutions and we need your help to enable them scale their impact.</Typography>
+                    <Typography variant="p" sx={{display: "inline-block", width:"100%", border:"1px solid red", textAlign:"justify", lineHeight:"33.6px", fontSize:{xs:"19", md:"24px"} }} >Our students are reaching communities with their solutions and we need your help to enable them scale their impact.</Typography>
                     
                     <Box sx={{display:{xs:"flex", md:"grid"}, gridGap:{md:"29px"}, gridTemplateColumns: "200px 50px 200px", justifyContent:"center" }}>
                         <Box>
                         <ButtonMain
+                        sx={{width:{xs:"170px"}}}
                         type="submit"
                         diplay={"flex"}
                         justifyContent={"space-around"} 
@@ -283,6 +284,7 @@ function Home() {
                     
                         <Box>
                         <ButtonMain
+                        sx={{width:{xs:"170px"}}}
                         type="submit"
                         diplay={"flex"}
                         justifyContent={"space-around"} 
@@ -335,25 +337,25 @@ function Home() {
             <Grid container spacing={1} columns={12} mt={2.6} sx={{display:"flex", justifyContent:"center"}}>
                 <Grid item xs={12} sm={12} md={4}>
                     <Box >
-                        <img src={Twokids} alt="" style={{width:"90%", border:"1px solid red"}} />
+                        <img src={Twokids} alt="" style={{width:"100%", border:"1px solid red"}} />
                     </Box>
-                    <Box sx={{border:"1px solid red", width:"90%", display:"flex", flexDirection:"row", justifyContent:"center"}}>
+                    <Box sx={{border:"1px solid red", width:{xs:"100%", md:"90%"}, display:"flex", flexDirection:"row", justifyContent:"center"}}>
                         <Typography variant="p" sx={{fontWeight:"400", width:"170px", fontSize:"14px", color:"#303E49"}}>An enim nullam tempori donec porta and blandi integer velna vitae.</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={12} md={4}>
                     <Box >
-                        <img src={Twokids} alt="" style={{width:"90%", border:"1px solid red"}} />
+                        <img src={Twokids} alt="" style={{width:"100%", border:"1px solid red"}} />
                     </Box>
-                    <Box sx={{border:"1px solid red", width:"90%", display:"flex", flexDirection:"row", justifyContent:"center"}}>
+                    <Box sx={{border:"1px solid red", width:{xs:"100%", md:"90%"}, display:"flex", flexDirection:"row", justifyContent:"center"}}>
                         <Typography variant="p" sx={{fontWeight:"400", width:"170px", fontSize:"14px", color:"#303E49"}}>An enim nullam tempori donec porta and blandi integer velna vitae.</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={12} md={4}>
                     <Box >
-                        <img src={Twokids} alt="" style={{width:"90%", border:"1px solid red"}} />
+                        <img src={Twokids} alt="" style={{width:"100%", border:"1px solid red"}} />
                     </Box>
-                    <Box sx={{border:"1px solid red", width:"90%", display:"flex", flexDirection:"row", justifyContent:"center"}}>
+                    <Box sx={{border:"1px solid red", width:{xs:"100%", md:"90%"}, display:"flex", flexDirection:"row", justifyContent:"center"}}>
                         <Typography variant="p" sx={{fontWeight:"400", width:"170px", fontSize:"14px", color:"#303E49"}}>An enim nullam tempori donec porta and blandi integer velna vitae.</Typography>
                     </Box>
                 </Grid>
